@@ -1,38 +1,391 @@
-.App {
-  text-align: center;
+/* ============================================================
+   GOOGLE FONTS IMPORT
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500;600&display=swap');
+
+/* ============================================================
+   CSS VARIABLES — Little Lemon Brand Colors
+   ============================================================ */
+:root {
+  /* Primary Colors */
+  --primary-green: #495E57;
+  --primary-yellow: #F4CE14;
+
+  /* Secondary Colors */
+  --secondary-orange: #EE9972;
+  --secondary-pink: #FBDABB;
+  --highlight-light: #EDEFEE;
+  --highlight-dark: #333333;
+
+  /* Font Families */
+  --font-display: 'Markazi Text', serif;
+  --font-body: 'Karla', sans-serif;
+
+  /* Font Sizes */
+  --text-display: 64px;
+  --text-subtitle: 40px;
+  --text-lead: 18px;
+  --text-section-title: 20px;
+  --text-card-title: 18px;
+  --text-body: 16px;
+  --text-highlight: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ============================================================
+   RESET & BASE STYLES
+   ============================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: var(--font-body);
+  background-color: white;
+  color: var(--highlight-dark);
+  line-height: 1.5;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============================================================
+   HEADINGS — Markazi Text
+   ============================================================ */
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 500;
+  color: var(--primary-green);
+  line-height: 1.1;
+  margin: 0 0 8px 0;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-subtitle);
+  font-weight: 400;
+  color: var(--primary-green);
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-card-title);
+  font-weight: 700;
+  color: var(--highlight-dark);
+  margin: 0 0 4px 0;
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-section-title);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--highlight-dark);
+  margin: 0 0 8px 0;
+}
+
+h5 {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--highlight-dark);
+  margin: 0;
+}
+
+h6 {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 700;
+  color: var(--highlight-dark);
+  margin: 0;
+}
+
+/* ============================================================
+   PARAGRAPHS & SPANS — Karla
+   ============================================================ */
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.5;
+  color: var(--highlight-dark);
+  max-width: 65ch;
+  margin: 0 0 16px 0;
+}
+
+span {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--highlight-dark);
+}
+
+/* Lead text — used for CTAs and descriptive items */
+p.lead,
+span.lead {
+  font-size: var(--text-lead);
+  font-weight: 500;
+}
+
+/* Highlight text — e.g., prices */
+p.highlight,
+span.highlight {
+  font-size: var(--text-highlight);
+  font-weight: 500;
+  color: var(--secondary-orange);
+}
+
+/* Section title — uppercase 20pt extra bold */
+.section-title {
+  font-family: var(--font-body);
+  font-size: var(--text-section-title);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--highlight-dark);
+}
+
+/* Card title — 18pt bold */
+.card-title {
+  font-family: var(--font-body);
+  font-size: var(--text-card-title);
+  font-weight: 700;
+  color: var(--highlight-dark);
+}
+
+/* This week's specials label */
+.specials-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--highlight-dark);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  background-color: var(--primary-green);
+  padding: 16px 0;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+nav ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
+  gap: 32px;
+  margin: 0;
+  padding: 0 24px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  font-family: var(--font-body);
+  font-size: var(--text-lead);
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--primary-yellow);
+}
+
+/* Underline animation */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-yellow);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary {
+  background-color: var(--primary-yellow);
+  color: var(--highlight-dark);
+  font-family: var(--font-body);
+  font-size: var(--text-lead);
+  font-weight: 700;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #e0b814;
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  background-color: var(--primary-green);
+  color: white;
+  font-family: var(--font-body);
+  font-size: var(--text-lead);
+  font-weight: 700;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: #3d524a;
+  transform: scale(1.02);
+}
+
+/* ============================================================
+   IMAGES
+   ============================================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+img.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+img.bordered {
+  border: 2px solid var(--highlight-light);
+}
+
+img.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 3-column grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* 2-column grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Hero section with dark background */
+.hero {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 48px 32px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+}
+
+.hero h1,
+.hero h2 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hero p {
+  color: white;
+  max-width: 65ch;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Card container */
+.card {
+  background-color: var(--highlight-light);
+  border-radius: 16px;
+  padding: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --text-display: 48px;
+    --text-subtitle: 32px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 24px;
+  }
+
+  .hero {
+    padding: 32px 20px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
