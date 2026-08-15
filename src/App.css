@@ -279,6 +279,7 @@ img {
 
 img.shadow {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 img.bordered {
@@ -298,6 +299,7 @@ img.cover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  margin-bottom: 32px;
 }
 
 /* 3-column grid */
@@ -305,6 +307,7 @@ img.cover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin-bottom: 32px;
 }
 
 /* 2-column grid */
@@ -312,11 +315,16 @@ img.cover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  margin-bottom: 32px;
 }
 
 /* Hero section with dark background */
 .hero {
-  background-color: var(--primary-green);
+  /* background-color: var(--primary-green); */
+  background-image: url('../public/image_assets/restauranfood.jpg');
+  background-size: cover;        /* Cover the entire section */
+  background-position: center;   /* Center the image */
+  background-repeat: no-repeat;
   color: white;
   padding: 48px 32px;
   border-radius: 16px;

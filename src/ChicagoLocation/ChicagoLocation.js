@@ -9,7 +9,7 @@ function ChicagoLocation() {
                 Little Lemon is owned by two Italian brothers, Mario and Adrian, who
                 moved to the US to pursue their shared dream of owning a restaurant.
             </p>
-            <img src="restaurant.jpg" alt="Restaurant interior" className="shadow" />
+            <img src="/image_assets/restaurant.jpg" alt="Restaurant interior" className="shadow" />
         </section>
     );
 }

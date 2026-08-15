@@ -6,9 +6,22 @@ function Specials() {
             name: "Greek salad",
             price: "$12.99",
             description:
-                "The famous Greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-            image: "greek-salad.jpg", // replace with actual image path
+                "Crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
+            image: "/image_assets/greek salad.jpg", // replace with actual image path
         },
+        {
+            name: "Lemon desert",
+            price: "$4.99",
+            description:
+                "Placeholder: Information is not really important.",
+            image: "/image_assets/lemon dessert.jpg",
+        },
+        {
+            name: "Bruchetta",
+            price: "$7.99",
+            description: "A Spanish tapa idk",
+            image: "/image_assets/bruchetta.jpg",
+        }
         // add more specials here...
     ];
 
