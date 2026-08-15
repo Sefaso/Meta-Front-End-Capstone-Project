@@ -1,8 +1,11 @@
+import Navbar from "../Navbar/Navbar.js";
+
 function ConfirmedBooking() {
 
     return (
         <>
-        <h2>Booking confirmed!</h2>
+            <Navbar />
+            <h2>Booking confirmed!</h2>
         </>
     );
 };
